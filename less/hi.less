@@ -1,0 +1,82 @@
+.section.hi {
+  background-image: url('../img/stephen_candid.jpg');
+
+  p {
+    text-align: center;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 5rem;
+
+    color: #FFFFFF;
+    -webkit-text-fill-color: #FFFFFF;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #2e2e2e;
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+  }
+
+  .my_name {
+    font-size: 4rem;
+    i {
+      font-family: 'Lobster', cursive;
+    }
+  }
+
+  .down_arrow {
+    animation-name: bounce;
+
+    width: 100%;
+    text-align: center;
+    bottom: .1rem;
+    position: absolute;
+
+    font-size: 4rem;
+    text-decoration: none;
+    color: #FFFFFF;
+    -webkit-text-fill-color: #FFFFFF;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #53868B;
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+  }
+}
+
+.floating {
+  animation-name: floating;
+  -webkit-animation-name: floating;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(8%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(8%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
