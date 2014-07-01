@@ -3,3 +3,39 @@
 
 // sections
 @import "hi.less";
+
+
+.section.god {
+  background-color: #53868B;
+  background-image: '../img/world.png';
+
+  .heading {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 4rem;
+
+    color: #FFFFFF;
+    -webkit-text-fill-color: #FFFFFF;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #2e2e2e;
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+
+    i {
+      font-size: 6rem;
+      font-family: 'Lobster', cursive;
+    }
+  }
+
+  .fullPage-slidesNav {
+    a span {
+      background: #333;
+    }
+    a.active span {
+      background: #FFFFFF;
+    }
+  }
+}

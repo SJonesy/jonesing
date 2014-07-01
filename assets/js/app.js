@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('#fullpage').fullpage({
     verticalCentered: true,
     resize : true,
-    sectionsColor : ['#2e2e2e', '#53868B', '#2e2e2e', '#e2e2e2'],
+    sectionsColor : ['#2e2e2e', '#FFFFFF', '#2e2e2e', '#e2e2e2'],
     anchors:['firstSlide', 'secondSlide', 'thirdSlide', 'fourthSlide'],
     scrollingSpeed: 700,
     easing: 'easeInQuart',
@@ -31,7 +31,7 @@ $(document).ready(function() {
     onLeave: function(index, nextIndex, direction){},
     afterLoad: function (anchorLink, index) {
       if (anchorLink === 'secondSlide') {
-
+        setTimeout(function(){$('.section.god .heading').css('opacity', 1);}, 1000);
       }
     },
     afterRender: function(){
