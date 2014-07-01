@@ -31,7 +31,7 @@ $(document).ready(function() {
     onLeave: function(index, nextIndex, direction){},
     afterLoad: function (anchorLink, index) {
       if (anchorLink === 'secondSlide') {
-        setTimeout(function(){$('.section.god .heading').css('opacity', 1);}, 1000);
+        setTimeout(function(){$('.section.god .heading').css('opacity', 1);}, 500);
       }
     },
     afterRender: function(){
