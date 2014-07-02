@@ -31,48 +31,20 @@ $(document).ready(function() {
     onLeave: function(index, nextIndex, direction){},
     afterLoad: function (anchorLink, index) {
       if (anchorLink === 'secondSlide') {
-        var terminal = $('.section.terminal .screen');
-
-        terminal.text('');
-
-        var cowthinkInput = 'cowthink "I\'m a software developer"\n';
-        var cow = [ '     __________________________    '
-                  , '    ( I\'m a software developer )  '
-                  , '     --------------------------    '
-                  , '            o   ^__^               '
-                  , '             o  (oo)\\_______      '
-                  , '                (__)\\       )\\/\\'
-                  , '                    ||----w |      '
-                  , '                    ||     ||    \n' ];
-        var prompt = '    steve@anonymous:~$ ';
-        var echoInput = ' echo "and also.. (press down arrow key)"\n';
-        var echoOutput = '    and also.. (press down arrow key)';
-
-        var inputs = [];
-
-        inputs.push('\n');
-        inputs.push( prompt );
-        inputs = inputs.concat( cowthinkInput.split('') );
-        inputs.push( cow.join('\n')          );
-        inputs.push( prompt                  );
-        inputs = inputs.concat( echoInput.split('')     );
-        inputs.push( echoOutput              );
-
-        var timeout = function (inputs, delay, iterator) {
-          var text   = terminal.text();
-
-          setTimeout(function() {
-            terminal.text(text + inputs.shift());
-            if (inputs.length > 0) {
-              timeout(inputs, delay);
-            }
-          }, delay);
-        }
-
-        timeout(inputs, 50)
+        loadTerminal();
       }
       if (anchorLink === 'thirdSlide') {
         setTimeout(function(){$('.section.god .heading').css('opacity', 1);}, 500);
+      }
+      if (anchorLink === 'fourthSlide') {
+        $('.section.websites .beautiful').addClass('bigEntrance');
+
+        $('.section.websites .beautiful').css('opacity', 1);
+
+        setTimeout(function() {
+          $('.section.websites .performant').addClass('expandOpen');
+          $('.section.websites .performant').css('opacity', 1);
+        }, 1000);
       }
     },
     afterRender: function(){
@@ -87,4 +59,46 @@ $(document).ready(function() {
       console.log("SLIDE LEAVE");
     }
   });
+
+  function loadTerminal() {
+    var terminal = $('.section.terminal .screen');
+
+    terminal.text('');
+
+    var cowthinkInput = 'cowthink "I\'m a software developer"\n';
+    var cow = [ '     __________________________    '
+              , '    ( I\'m a software developer )  '
+              , '     --------------------------    '
+              , '            o   ^__^               '
+              , '             o  (oo)\\_______      '
+              , '                (__)\\       )\\/\\'
+              , '                    ||----w |      '
+              , '                    ||     ||    \n' ];
+    var prompt = '    steve@anonymous:~$ ';
+    var echoInput = 'echo "and also.. (press down arrow key)"\n';
+    var echoOutput = '    and also.. (press down arrow key)';
+
+    var inputs = [];
+
+    inputs.push('\n');
+    inputs.push( prompt );
+    inputs = inputs.concat( cowthinkInput.split('') );
+    inputs.push( cow.join('\n')          );
+    inputs.push( prompt                  );
+    inputs = inputs.concat( echoInput.split('')     );
+    inputs.push( echoOutput              );
+
+    var timeout = function (inputs, delay, iterator) {
+      var text   = terminal.text();
+
+      setTimeout(function() {
+        terminal.text(text + inputs.shift());
+        if (inputs.length > 0) {
+          timeout(inputs, delay);
+        }
+      }, delay);
+    }
+
+    timeout(inputs, 50);
+  }
 });
