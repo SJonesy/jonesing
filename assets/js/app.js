@@ -3,7 +3,7 @@ $(document).ready(function() {
     verticalCentered: true,
     resize : true,
     sectionsColor : ['#2e2e2e', '#FFFFFF', '#2e2e2e', '#e2e2e2'],
-    anchors:['firstSlide', 'secondSlide', 'thirdSlide', 'fourthSlide'],
+    anchors:['firstSlide', 'secondSlide', 'thirdSlide', 'fourthSlide', 'fifthSlide', 'sixthSlide'],
     scrollingSpeed: 700,
     easing: 'easeInQuart',
     menu: false,
